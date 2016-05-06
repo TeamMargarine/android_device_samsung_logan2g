@@ -20,6 +20,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 ## Device identifier. This must come after all inclusions
 PRODUCT_MODEL := GT-S7262
 PRODUCT_BRAND := samsung
-PRODUCT_NAME := cm_logan2g
+PRODUCT_NAME := xosp_logan2g
 PRODUCT_DEVICE := logan2g
 PRODUCT_MANUFACTURER := samsung
