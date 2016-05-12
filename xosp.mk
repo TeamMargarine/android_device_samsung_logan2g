@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := logan2g
 $(call inherit-product, vendor/xosp/config/xosp.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/logan2g/full_logan2g.mk)
+$(call inherit-product, device/samsung/logan2g/xosp_logan2g.mk)
 
 # Override build properties.
 PRODUCT_BUILD_PROP_OVERRIDES += \
