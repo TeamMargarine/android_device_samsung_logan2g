@@ -34,6 +34,30 @@ TARGET_KERNEL_CONFIG := xosp-logan2g_defconfig
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
 
+#sepolicy
+BOARD_SEPOLICY_DIRS := device/samsung/logan2g/sepolicy
+BOARD_SEPOLICY_UNION := \
+	bootanim.te \
+	file.te \
+	file_contexts \
+	seapp_contexts \
+	theme.te \
+	healthd.te \
+	init.te \
+	init_shell.te \
+	installd.te \
+	logd.te \
+	sdcardd.te \
+	netd.te \
+	shell.te \
+	system.te \
+	sysinit.te \
+	untrusted_app.te \
+	surfaceflinger.te \
+	vold.te \
+	domain.te \
+	zygote.te
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
@@ -146,3 +170,5 @@ MINIMAL_FONT_FOOTPRINT := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
+
+#COMPILE_USES_SELINUX := false
