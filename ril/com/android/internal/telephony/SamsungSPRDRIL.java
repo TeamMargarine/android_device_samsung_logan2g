@@ -27,10 +27,11 @@ import android.telephony.Rlog;
 import com.android.internal.telephony.RILConstants;
 import java.util.Collections;
 import android.telephony.PhoneNumberUtils;
-import android.telephony.TelephonyManager;
 import android.telephony.ModemActivityInfo;
 
 import java.util.ArrayList;
+//import java.util.Arrays; <---- just for now
+//import java.util.Collections;
 
 /**
  * Custom RIL to handle unique behavior of D2 radio
@@ -312,10 +313,29 @@ public class SamsungSPRDRIL extends RIL implements CommandsInterface {
         }
 
         if (error != 0) {
-            rr.onError(error, ret);
-            return rr;
+           switch (rr.mRequest) { 
+			 case RIL_REQUEST_ENTER_SIM_PIN: 
+			 case RIL_REQUEST_ENTER_SIM_PIN2:
+			 case RIL_REQUEST_CHANGE_SIM_PIN: 
+			 case RIL_REQUEST_CHANGE_SIM_PIN2: 
+			 case RIL_REQUEST_SET_FACILITY_LOCK: 
+				if (mIccStatusChangedRegistrants != null) { 
+				 if (RILJ_LOGD) {
+					 riljLog("ON some errors fakeSimStatusChanged: reg count="
+						+ mIccStatusChangedRegistrants.size());
+				 }
+				mIccStatusChangedRegistrants.notifyRegistrants(); 
         }
-
+				break;
+			case RIL_REQUEST_GET_RADIO_CAPABILITY: {
+				 if (REQUEST_NOT_SUPPORTED == error ||
+					GENERIC_FAILURE == error) { 
+					ret = makeStaticRadioCapability(); 
+					error = 0; 
+				break;
+					}
+			if (error != 0) rr.onError(error, ret);
+			}
         if (RILJ_LOGD) riljLog(rr.serialString() + "< " + requestToString(rr.mRequest)
             + " " + retToString(rr.mRequest, ret));
 
