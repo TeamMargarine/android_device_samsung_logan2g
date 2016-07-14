@@ -139,6 +139,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungServiceMode
 
+# Camera
+PRODUCT_PACKAGES += \
+	libmemoryheapion
+
 # Charger
 PRODUCT_PACKAGES += \
     charger \

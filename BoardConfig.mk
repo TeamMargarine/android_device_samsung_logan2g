@@ -1,5 +1,5 @@
 # Assert
-TARGET_OTA_ASSERT_DEVICE := logan2g
+TARGET_OTA_ASSERT_DEVICE := logan2g,GT-S7262
 
 # Architecture
 TARGET_ARCH := arm
@@ -103,6 +103,10 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd-logan2g
 
 # CMHW
 BOARD_HARDWARE_CLASS := device/samsung/logan2g/cmhw/
+
+#FONTS!!!!!!!!!!!!
+EXTENDED_FONT_FOOTPRINT := true
+USE_MINIKIN := true
 
 # Camera
 USE_CAMERA_STUB := true 
