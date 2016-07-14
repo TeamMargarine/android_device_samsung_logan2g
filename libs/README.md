@@ -1,2 +1,0 @@
-## SPRD libs 
-* koquantam

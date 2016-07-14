@@ -32,31 +32,10 @@ BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/samsung/logan2g
 TARGET_KERNEL_CONFIG := xosp-logan2g_defconfig
 TARGET_USES_UNCOMPRESSED_KERNEL := true
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
 
 #sepolicy
 BOARD_SEPOLICY_DIRS := device/samsung/logan2g/sepolicy
-BOARD_SEPOLICY_UNION := \
-	bootanim.te \
-	file.te \
-	file_contexts \
-	seapp_contexts \
-	theme.te \
-	healthd.te \
-	init.te \
-	init_shell.te \
-	installd.te \
-	logd.te \
-	sdcardd.te \
-	netd.te \
-	shell.te \
-	system.te \
-	sysinit.te \
-	untrusted_app.te \
-	surfaceflinger.te \
-	vold.te \
-	domain.te \
-	zygote.te
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
@@ -123,7 +102,7 @@ COMMON_GLOBAL_CFLAGS += -DSEC_PRODUCT_FEATURE_RIL_CALL_DUALMODE_CDMAGSM
 BOARD_HAL_STATIC_LIBRARIES := libhealthd-logan2g
 
 # CMHW
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/logan2g/cmhw/
+BOARD_HARDWARE_CLASS := device/samsung/logan2g/cmhw/
 
 # Camera
 USE_CAMERA_STUB := true 
