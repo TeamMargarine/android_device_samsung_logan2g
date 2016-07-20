@@ -148,6 +148,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072
 
+#Trimming??? let's try it.
+PRODUCT_PROPERTY_OVERRIDES += \ 
+	ro.sys.fw.use_trim_settings=true 
+
 # Properties
 # Default properties
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
