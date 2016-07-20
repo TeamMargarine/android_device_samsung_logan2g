@@ -1,4 +1,4 @@
-# Before copying my work or using it take my permission in the following way (any one) :-
+# Don't steal my work, give credit where it is due. You do not even have to link here, just mention me on your tree readme.md.
 * Original Tree by FireLord1
 * XOSP and FlareROM Trees by Qiangong2
 * PM me on xda or here on Github
