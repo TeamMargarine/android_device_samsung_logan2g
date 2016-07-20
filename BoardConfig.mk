@@ -59,13 +59,6 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/dwc_otg.0/gadget/lun0/file"
 
-# Philz
-#TARGET_COMMON_NAME := GT-S7262
-#BOOTLOADER_CMD_ARG := "download"
-#BOARD_HAS_LOW_RESOLUTION := true
-#BRIGHTNESS_SYS_FILE := "/sys/class/backlight/panel/brightness"
-#BOARD_USE_B_SLOT_PROTOCOL := true
-
 # TWRP Specific
 #RECOVERY_GRAPHICS_USE_LINELENGTH := true
 #DEVICE_RESOLUTION := 480x800
@@ -150,3 +143,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
+
+#I like fast boots and I cannot lie :D
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
