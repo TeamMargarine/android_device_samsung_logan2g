@@ -57,6 +57,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     memtrack.sc6820i
 
+#Compat
+PRODUCT_PACKAGES += \
+	libstlport
+
 # Idc
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/Zinitix_tsp.idc:system/usr/idc/Zinitix_tsp.idc
@@ -147,6 +151,11 @@ PRODUCT_PACKAGES += \
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+	Snap \
+	Gallery2
 
 # Properties
 # Default properties

@@ -26,13 +26,16 @@ COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DSPRD_HARDWARE
 TARGET_BOARD_PLATFORM_GPU := mali-400 MP
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
+BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8,androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/samsung/logan2g
-TARGET_KERNEL_CONFIG := cyanogenmod-logan2g_defconfig
+TARGET_KERNEL_CONFIG := xosp-logan2g_defconfig
 TARGET_USES_UNCOMPRESSED_KERNEL := true
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
+
+#sepolicy
+BOARD_SEPOLICY_DIRS := device/samsung/logan2g/sepolicy
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
@@ -55,13 +58,6 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/dwc_otg.0/gadget/lun0/file"
-
-# Philz
-#TARGET_COMMON_NAME := GT-S7262
-#BOOTLOADER_CMD_ARG := "download"
-#BOARD_HAS_LOW_RESOLUTION := true
-#BRIGHTNESS_SYS_FILE := "/sys/class/backlight/panel/brightness"
-#BOARD_USE_B_SLOT_PROTOCOL := true
 
 # TWRP Specific
 #RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -93,19 +89,24 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 # Ril
 BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet0"
 BOARD_RIL_CLASS := ../../../device/samsung/logan2g/ril
-COMMON_GLOBAL_CFLAGS += -DSEC_PRODUCT_FEATURE_RIL_CALL_DUALMODE_CDMAGSM
+COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd-logan2g
 
 # CMHW
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/logan2g/cmhw/
+BOARD_HARDWARE_CLASS := device/samsung/logan2g/cmhw/
+
+#FONTS!!!!!!!!!!!!
+EXTENDED_FONT_FOOTPRINT := true
+USE_MINIKIN := true
 
 # Camera
 USE_CAMERA_STUB := true 
 
 # Audio
 BOARD_USES_TINYALSA_AUDIO := true
+TARGET_TINY_ALSA_IGNORE_SILENCE_SIZE := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -139,10 +140,10 @@ TARGET_SCREEN_HEIGHT := 800
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-# Font Footprint
-SMALLER_FONT_FOOTPRINT := true
-MINIMAL_FONT_FOOTPRINT := true
-
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
+
+#I like fast boots and I cannot lie :D
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
