@@ -152,6 +152,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+	Snap \
+	Gallery2
+
 # Properties
 # Default properties
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
