@@ -169,4 +169,7 @@
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
 
+	<integer name="config_multiuserMaximumUsers">3</integer> 
+	
+	<bool name="config_enableMultiUserUI">true</bool> 
 </resources>

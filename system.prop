@@ -20,13 +20,26 @@ persist.ttydev=ttyVUART0
 ro.product.multi_touch_enabled=true
 ro.product.max_num_touch=2
 
-# RIL
-ril.sim2.present=1
-ro.ril.hsxpa=1
-persist.msms.phone_count=2
+# RIL: trying something new
+#ril.sim2.present=1
+#ro.ril.hsxpa=1
+#persist.msms.phone_count=2
+ro.ril.telephony.mqanelements=5
 
 ro.secure=0
 ro.adb.secure=0
 service.adb.root=1
 ro.allow.mock.location=1
 ro.debuggable=1
+
+#We have a low amount of RAM...
+config.disable_atlas=true 
+#WHAT IS ATLAS!!! Eh, it's disabled though, so who cares :D
+dalvik.vm.jit.codecachesize=0
+ro.config.max_starting_bg=8
+ro.sys.fw.bg_apps_limit=16
+
+#Other stuff
+persist.sys.force_highendgfx=true
+#Because we're high end ;D
+ro.kernel.qemu=0

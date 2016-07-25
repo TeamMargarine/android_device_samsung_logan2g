@@ -22,7 +22,7 @@ $(call inherit-product-if-exists, vendor/samsung/logan2g/logan2g-vendor.mk)
 
 # Use the Dalvik VM specific for devices with 512 MB of RAM
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-
+$(call inherit-product, vendor/samsung/workaround/workaround.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 
 # Overlay
@@ -56,6 +56,10 @@ PRODUCT_COPY_FILES += \
 # Memtrack
 PRODUCT_PACKAGES += \
     memtrack.sc6820i
+
+#Compat
+PRODUCT_PACKAGES += \
+	libstlport
 
 # Idc
 PRODUCT_COPY_FILES += \
