@@ -30,7 +30,7 @@ BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8,androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/samsung/logan2g
-TARGET_KERNEL_CONFIG := xosp-logan2g_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod-logan2g_defconfig
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
 
