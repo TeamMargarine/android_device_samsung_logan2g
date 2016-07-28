@@ -1,2 +1,2 @@
-add_lunch_combo cm_logan2g-eng
-add_lunch_combo cm_logan2g-userdebug
+#add_lunch_combo xosp_logan2g-eng
+add_lunch_combo xosp_logan2g-userdebug

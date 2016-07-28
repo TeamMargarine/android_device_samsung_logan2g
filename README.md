@@ -1,6 +1,7 @@
 # Before copying my work or using it take my permission in the following way (any one) :-
-* PM me at xda - FireLord 
-* Email me - amankumarmicro@gmail.com
+* Original Tree by FireLord1
+* XOSP and FlareROM Trees by Qiangong2
+* PM me on xda or here on Github
 
 # Device configuration for Samsung Galaxy Star Pro|Plus (logan2g)
 
