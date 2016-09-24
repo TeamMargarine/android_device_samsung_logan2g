@@ -160,7 +160,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Properties
 # Default properties
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=adb,mtp \
+	ro.adb.secure=0 \
+	ro.secure=0 \
+	ro.debuggable=1
+
+# ADB. derp :P
+ADDITIONAL_DEFAULT_PROPERTIES += \
+	ro.adb.secure=0 \
+	persist.service.adb.enable=1
 
 # Google-specific location properties
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -26,16 +26,12 @@ COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DSPRD_HARDWARE
 TARGET_BOARD_PLATFORM_GPU := mali-400 MP
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8,androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/samsung/logan2g
 TARGET_KERNEL_CONFIG := cyanogenmod-logan2g_defconfig
 TARGET_USES_UNCOMPRESSED_KERNEL := true
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
-
-#sepolicy
-BOARD_SEPOLICY_DIRS := device/samsung/logan2g/sepolicy
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
@@ -95,11 +91,11 @@ COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 BOARD_HAL_STATIC_LIBRARIES := libhealthd-logan2g
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/samsung/logan2g/cmhw/
+BOARD_HARDWARE_CLASS := device/samsung/logan2g/cmhw/ hardware/samsung/cmhw/
 
 #FONTS!!!!!!!!!!!!
-EXTENDED_FONT_FOOTPRINT := true
-USE_MINIKIN := true
+#EXTENDED_FONT_FOOTPRINT := true
+#USE_MINIKIN := true
 
 # Camera
 USE_CAMERA_STUB := true 
@@ -145,5 +141,5 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 
 #I like fast boots and I cannot lie :D
-WITH_DEXPREOPT := true
-WITH_DEXPREOPT_PIC := true
+#WITH_DEXPREOPT := true
+#WITH_DEXPREOPT_PIC := true

@@ -17,7 +17,7 @@ bin/sprd_monitor
 bin/cpu
 bin/hostapd
 
-# Some more packages
+# Some Fucking packages
 lib/libmorpho_easy_hdr.so
 lib/libmorpho_facesolid.so
 lib/libvolumemanager.so
